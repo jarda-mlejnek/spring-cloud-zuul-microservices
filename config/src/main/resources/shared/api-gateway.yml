@@ -1,0 +1,35 @@
+hystrix:
+  command:
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 20000
+
+ribbon:
+  ReadTimeout: 20000
+  ConnectTimeout: 20000
+
+zuul:
+  ignoredServices: '*'
+  host:
+    connect-timeout-millis: 20000
+    socket-timeout-millis: 20000
+
+  routes:
+    category-service:
+        path: /categories/**
+#        serviceId: category-service
+        url: http://localhost:8801/api/v1/category-api/
+        stripPrefix: false
+        sensitiveHeaders:
+
+    product-service:
+        path: /products/**
+#        serviceId: product-service
+        url: http://localhost:8802
+        stripPrefix: false
+        sensitiveHeaders:
+
+server:
+  port: 4000
