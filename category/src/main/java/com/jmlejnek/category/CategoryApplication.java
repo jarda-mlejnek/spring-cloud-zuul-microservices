@@ -1,13 +1,9 @@
 package com.jmlejnek.category;
 
 import com.jmlejnek.category.domain.Category;
-import com.sun.xml.internal.ws.client.sei.ResponseBuilder;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-import org.springframework.cloud.netflix.feign.EnableFeignClients;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,8 +13,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
-@EnableEurekaClient
-@EnableFeignClients
+@EnableDiscoveryClient
 @RestController
 @RequestMapping(CategoryApplication.MAPPING)
 @SpringBootApplication

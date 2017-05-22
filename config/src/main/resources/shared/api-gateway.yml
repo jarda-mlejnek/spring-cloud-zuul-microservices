@@ -18,16 +18,16 @@ zuul:
 
   routes:
     category-service:
-        path: /categories/**
-#        serviceId: category-service
-        url: http://localhost:8801/api/v1/category-api/
+        path: /category-api/**
+        serviceId: category-service
+#        url: http://localhost:8801/api/v1/category-api/
         stripPrefix: false
         sensitiveHeaders:
 
     product-service:
-        path: /products/**
-#        serviceId: product-service
-        url: http://localhost:8802
+        path: /product-api/**
+        serviceId: product-service
+#        url: http://localhost:8802
         stripPrefix: false
         sensitiveHeaders:
 

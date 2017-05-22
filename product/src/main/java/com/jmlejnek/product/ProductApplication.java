@@ -3,6 +3,7 @@ package com.jmlejnek.product;
 import com.jmlejnek.product.domain.Product;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,6 +14,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
+@EnableDiscoveryClient
 @RestController
 @RequestMapping(ProductApplication.MAPPING)
 @SpringBootApplication
